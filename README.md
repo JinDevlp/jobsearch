@@ -8,12 +8,19 @@
 ## About the project
 I have an Excel file where I keep track of all the job postings that I am interested in or have applied for. I wanted to make a simple website where I can keep track of them in a **database** using **Python**, **Django** and **PostgreSQL**. <br>
 
+## Functionality
+* Users can login/logout or register
+* User can Add, Delete, View or Update job postings they found on the internet
+* User's information will be saved on PostgreSQL database 
+<br>
+
 ## What is included?
 * Frontend<br>
 * Backend<br>
 * Database<br>
 * CRUD functions<br>
 * Login/logout & User Registration
+<br>
 
 ## What is next?
 * Work on Django REST framework 
