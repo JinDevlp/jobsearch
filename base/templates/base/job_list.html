@@ -1,0 +1,80 @@
+{% extends 'base/main.html' %} {% block content %}
+<!-- Start Table -->
+<div class="text-center">
+  <div class="h1 fw-light mb-4">Job Search Tracker</div>
+  <a href="{% url 'job-create' %}">
+    <button
+      class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
+      data-bs-toggle="modal"
+      data-bs-target="#feedbackModal"
+    >
+      <span class="d-flex align-items-center">
+        <i class="bi-chat-text-fill me-2"></i>
+        <span class="small">Add Job</span>
+      </span>
+    </button>
+  </a>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table custom-table mt-5">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Date</th>
+          <th scope="col">Employer</th>
+          <th scope="col">Source</th>
+          <th scope="col">Position</th>
+          <th scope="col">Applied?</th>
+          <th scope="col">Response</th>
+          <th scope="col">Myfollowup</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+        <tr>
+          <td>
+            <a href="{% url 'job' job.id %}" class="text-decoration-none">
+              View
+            </a>
+          </td>
+          <td>{{job.date}}</td>
+          <td>{{job.employer}}</td>
+          <td>
+            <a href='{{job.source}}' target="_blank" class='text-decoration-none link-secondary'>
+            {{job.source}}</td>
+            </a>
+          <td>{{job.position}}</td>
+          <td>{{job.actiontaken}}</td>
+          <td>{{job.response1}}</td>
+          <td>{{job.myfollowup1}}</td>
+          <td>
+            <a href="{% url 'job-edit' job.id %}">
+              <button
+                class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
+                data-bs-toggle="modal"
+                data-bs-target="#feedbackModal"
+              >
+                <span class="d-flex align-items-center">
+                  <i class="bi-chat-text-fill me-2"></i>
+                  <span class="small">Update</span>
+                </span>
+              </button>
+            </a>
+          </td>
+          <td class="text-center">
+            <a href="{% url 'job-delete' job.id %}">
+              <i class="fa-solid fa-trash diffcolor"></i>
+            </a>
+          </td>
+        </tr>
+        {%endfor%}
+        <!-- row finish -->
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- End Table -->
+{% endblock content %}

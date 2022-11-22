@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %}{% load bootstrap5 %} {% block content %}
+
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-12">
+      <form method="POST" class="form">
+        {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+      </form>
+    </div>
+  </div>
+</div>
+<p>
+  Dont have an account?
+  <a href="{% url 'register' %}" class="text-decoration-none">Register</a>
+</p>
+{% endblock content %}

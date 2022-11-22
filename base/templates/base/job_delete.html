@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %} {% load bootstrap5 %} {% block content %}
+<div class="card text-center">
+  <div class="card-header">
+    Are you sure you want to remove below from your list?
+  </div>
+  <div class="card-body">
+    <form method="POST">
+      {%csrf_token%}
+      <h5 class="card-title">Employer: {{job}}</h5>
+      <p class="card-text">Position: {{job.position}}</p>
+      <input type="submit" class="btn btn-primary" value="Delete" />
+    </form>
+  </div>
+  <div class="card-footer text-muted">You added this job on {{job.date}}</div>
+  <p><a href="{% url 'jobs' %}">Go Back Home</a></p>
+</div>
+
+{% endblock content %}

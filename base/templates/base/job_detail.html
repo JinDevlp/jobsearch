@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %} {% load bootstrap5 %} {% block content %}
+<div class="row">
+  <div class="col-md-5">
+    <h3>{{object.employer}}</h3>
+    <p class="text-muted">{{object.date}}</p>
+    <p>Position: {{object.position}}</p>
+
+    <p>Have I applied?: {{object.actiontaken}}</p>
+    <p>First Response: {{object.response1}}</p>
+    <p>Second Response: {{object.response2}}</p>
+    <p>My followup: {{object.myfollowup1}}</p>
+    <p>My followup: {{object.myfollowup2}}</p>
+    <a class="btn btn-primary" target="_blank" href="{{job.source}}">Apply</a>
+    <a class="btn btn-primary" href="{% url 'jobs'%}">Job List</a>
+  </div>
+</div>
+
+{% endblock content %}

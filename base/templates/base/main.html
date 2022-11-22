@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static%}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Job Search</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="{% static 'fontawesomefree/css/all.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    {% load bootstrap5 %} {% bootstrap_css %} {%bootstrap_messages %}
+    <style>
+      body {
+        background-color: #def5e5;
+        font-family: "Open Sans", sans-serif;
+      }
+      .btn {
+        font-family: "Open Sans", sans-serif;
+        background-color: #8ec3b0;
+      }
+      .diffcolor {
+        color: #e14d2a;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'base/navbar.html'%}
+    <div class="container mt-5 p-5">
+      {% block content %} {% endblock content %}
+    </div>
+    <script src="" async defer></script>
+  </body>
+</html>

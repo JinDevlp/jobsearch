@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %} {% load bootstrap5 %} {% block content %}
+
+<!-- Bootstrap 5 Contact Form Snippet -->
+<div class="text-center">
+  <div class="h1 fw-light pt-4">Job Form</div>
+  <p class="mb-4 text-muted">
+    You landing a job stars with one application at a time!
+  </p>
+</div>
+<div class="row my-5">
+  <div class="col-md-12">
+    <form method="POST" class="form">
+      {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+      <button type="submit" class="btn btn-primary">Submit</button>
+      {% endbuttons %}
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
